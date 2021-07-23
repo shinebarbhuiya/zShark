@@ -1,0 +1,481 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- 
+Template Name: Griffin - Responsive Bootstrap 4 Admin Dashboard Template
+Author: Hencework
+Support: support@hencework.com
+
+License: You must have a valid license purchased only from templatemonster to legally use the template for your project.
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>zShark - Best SEO Tool</title>
+    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+    <!-- vector map CSS -->
+    <link href="{% static 'zapp/js/vendors/vectormap/jquery-jvectormap-2.0.3.css' %}" rel="stylesheet" type="text/css">
+	
+	<!-- Morris Charts CSS -->
+    <link href="{% static 'zapp/js/vendors/morris.js/morris.css' %}" rel="stylesheet" type="text/css" >
+
+    <!-- Data Table CSS -->
+    <link href="{% static 'zapp/js/vendors/datatables.net-dt/css/jquery.dataTables.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'zapp/js/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Toggles CSS -->
+    <link href="{% static 'zapp/js/vendors/jquery-toggles/css/toggles.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'zapp/js/vendors/jquery-toggles/css/themes/toggles-light.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'zapp/js/dist/css/style.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader-it">
+        <div class="loader-pendulums"></div>
+    </div>
+ 
+
+
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark navbar-demo fixed-top">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img class="brand-img d-inline-block align-top mr-10" src="{% static 'zapp/js/dist/img/logo-dark.png' %}" alt="brand">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">DA/PA Checker</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Google SERP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Invoices</a>
+                </li>
+            </ul>
+            <form class="mr-10">
+                <div class="input-group d-inline-flex">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-purple" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+            <!-- <ul class="navbar-nav align-items-center flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="font-22 zmdi zmdi-settings"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="font-22 zmdi zmdi-notifications"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link d-flex align-items-center dropdown-toggle no-caret" href="#" id="userAuthdrp" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar avatar-sm">
+                            <img src="{% static 'zapp/js/dist/img/avatar3.jpg' %}" alt="user" class="avatar-img rounded-circle">
+                        </div>
+                        <span class="font-12 text-capitalize ml-10">Shane<i class="zmdi zmdi-chevron-down pl-5"></i></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userAuthdrp">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul> -->
+        </div>
+    </nav>
+        
+
+        
+
+    <div class="hk-pg-wrapper">
+           
+        <div class="container-fluid">
+
+
+
+            <div class="jumbotron jumbotron-fluid mt-4">
+                <div class="container">
+                <h1 class="display-4">Domain Authority / Page Authority Checker</h1>
+                <p class="lead">Get all the domain metric and details of any website. Here, you can find all the important SEO details of any website. </p>
+                </div>
+            </div>
+
+
+            <h1 class="text-indigo">Domain Authority</h1>
+        
+        
+        
+        <section class="hk-sec-wrapper mt-4">
+            <h5 class="hk-sec-title">Authority Details</h5>
+            <p class="mb-25">Get all the details of this url <code>domain authority, page authority</code> and <code>many more</code>.</p>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input class="form-control form-control-lg mt-15" type="text" placeholder="Enter the URL">
+                            
+                        </div>
+                        <div class="col-md-4">
+                            <input type="button" value="Analyze" class="btn btn-success btn-lg mt-3 btn-block ">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <div class="hk-row mt-4">
+							<div class="col-sm-12 text-center">
+								<div class="card-group hk-dash-type-2">
+									<div class="card card-sm">
+										<div class="card-body">
+											<div class="d-flex justify-content-between mb-5">
+												<div>
+													<span class="d-block font-15 text-dark font-weight-500 text-center">Domain Authority</span>
+												</div>
+												
+											</div>
+											<div>
+												<span class="d-block display-4 text-dark mb-5 counter-anim ">18</span>
+												<!-- <small class="d-block">12,458 Target Users</small> -->
+											</div>
+										</div>
+									</div>
+								
+									<div class="card card-sm">
+										<div class="card-body">
+											<div class="d-flex justify-content-between mb-5">
+												<div>
+													<span class="d-block font-15 text-dark font-weight-500 text-center">Page Authority</span>
+												</div>
+												<!-- <div>
+													<span class="text-primary font-14 font-weight-500">+15.5%</span>
+												</div> -->
+											</div>
+											<div>
+												<span class="d-block display-4 text-dark mb-5 "><span class="counter-anim">468,856</span></span>
+												<!-- <small class="d-block">72,458 Targeted</small> -->
+											</div>
+										</div>
+									</div>
+								
+									<div class="card card-sm">
+										<div class="card-body">
+											<div class="d-flex justify-content-between mb-5">
+												<div>
+													<span class="d-block font-15 text-dark font-weight-500">Spam Score</span>
+												</div>
+												<!-- <div>
+													<span class="text-danger font-14 font-weight-500"></span>
+												</div> -->
+											</div>
+											<div>
+												<span class="d-block display-4 text-dark mb-5 counter-anim">52</span>
+												<!-- <small class="d-block">42:32 Targeted</small> -->
+											</div>
+										</div>
+									</div>
+								
+									<div class="card card-sm">
+										<div class="card-body">
+											<div class="d-flex justify-content-between mb-5">
+												<div>
+													<span class="d-block font-15 text-dark font-weight-500">Inbound Links</span>
+												</div>
+												<!-- <div>
+													<span class="text-danger font-14 font-weight-500">-75%</span>
+												</div> -->
+											</div>
+											<div>
+												<span class="d-block display-4 text-dark mb-5 counter-anim">89</span>
+												<!-- <small class="d-block">42:32 Targeted</small> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>
+
+                
+                        
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <section class="hk-sec-wrapper">
+                                    <h5 class="hk-sec-title">URL Details</h5>
+                                    <p class="mb-40">Use buttons: <code>['copy', 'csv', 'excel', 'pdf', 'print']</code> to add export table options.</p>
+                                        <div class="row ">
+                                            <div class="col-sm">
+                                                <div class="table-wrap">
+                                                    <table id="datable_3" class="table table-hover w-100 display ">
+                                                     <thead>
+                                                        <tr>
+                                                            <th>URL</th>
+                                                            <th>Page Authority</th>                                                                                                                                                                                 
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Tiger Nixon</td>
+                                                            <td>System Architect</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Adwez Nash</td>
+                                                            <td>System Architect</td>
+                                                        
+                                                        <tr>
+                                                            <td>Garrett Winters</td>
+                                                            <td>Accountant</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ashton Cox</td>
+                                                            <td>Junior Technical Author</td>
+                                                        
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cedric Kelly</td>
+                                                            <td>Senior Javascript Developer</td>
+                                                        
+                                                    </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </section>
+                            </div>
+                            <div class="col-xl-6">
+                                <section class="hk-sec-wrapper">
+                                    <h5 class="hk-sec-title">URL Details</h5>
+                                    <p class="mb-40">Use buttons: <code>['copy', 'csv', 'excel', 'pdf', 'print']</code> to add export table options.</p>
+
+
+                                        <button class="button-copy">print</button>
+                                        <div class="row ">
+                                            <div class="col-sm">
+                                                <div class="table-wrap">
+                                                    <table id="datable_3" class="table table-hover w-100 display ">
+                                        
+                                                     <thead>
+                                                        <tr>
+                                                            <th>URL</th>
+                                                            <th>Page Authority</th>                                                                                                                                                                                 
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Tiger Nixon</td>
+                                                            <td>System Architect</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Adwez Nash</td>
+                                                            <td>System Architect</td>
+                                                        
+                                                        <tr>
+                                                            <td>Garrett Winters</td>
+                                                            <td>Accountant</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ashton Cox</td>
+                                                            <td>Junior Technical Author</td>
+                                                        
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cedric Kelly</td>
+                                                            <td>Senior Javascript Developer</td>
+                                                        
+                                                    </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </section>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+               
+                <div class="row">
+                    <div class="col-xl-12">
+                       
+                        <section class="hk-sec-wrapper">
+                            <h5 class="hk-sec-title">URL Details</h5>
+                            <p class="mb-40">Use buttons: <code>['copy', 'csv', 'excel', 'pdf', 'print']</code> to add export table options.</p>
+                            <div class="row ">
+                                <div class="col-sm">
+                                    <div class="table-wrap">
+                                        <table id="datable_3" class="table table-hover w-100 display">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Details</th>
+                                                    <th>Name</th>
+                                                    <th>Details</th>                                                                                                       
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>                                                   
+                                                </tr>
+                                                <tr>
+                                                    <td>Adwez Nash</td>
+                                                    <td>System Architect</td>
+                                                    <td>Adwez Nash</td>
+                                                    <td>System Architect</td>
+                                                   
+                                                <tr>
+                                                    <td>Garrett Winters</td>
+                                                    <td>Accountant</td>
+                                                    <td>Adwez Nash</td>
+                                                    <td>System Architect</td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td>Ashton Cox</td>
+                                                    <td>Junior Technical Author</td>
+                                                    <td>Adwez Nash</td>
+                                                    <td>System Architect</td>
+                                                  
+                                                </tr>
+                                                <tr>
+                                                    <td>Cedric Kelly</td>
+                                                    <td>Senior Javascript Developer</td>
+                                                    <td>Adwez Nash</td>
+                                                    <td>System Architect</td>                                                  
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                    </div>
+                </div>
+                <!-- /Row -->
+
+            </div>
+            <!-- /Container -->
+
+            <!-- Footer -->
+            <div class="hk-footer-wrap container-fluid">
+                <footer class="footer">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <p>Made With ❤️ By<a href="https://github.com/shinebarbhuiya/" class="text-dark" target="_blank">Shine Barbhuiya</a> © 2021</p>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <p class="d-inline-block">Follow us</p>
+                            <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
+                            <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
+                            <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-google-plus"></i></span></a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- /Footer -->
+
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+    <!-- jQuery -->
+    <script src="{% static 'zapp/js/vendors/jquery/dist/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'zapp/js/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="{% static 'zapp/js/dist/js/jquery.slimscroll.js' %}"></script>
+
+    <!-- Data Table JavaScript -->
+    <script src="{% static 'zapp/js/vendors/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/datatables.net-dt/js/dataTables.dataTables.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/datatables.net-buttons/js/buttons.flash.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/jszip/dist/jszip.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/pdfmake/build/pdfmake.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/pdfmake/build/vfs_fonts.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+    <script src="{% static 'zapp/js/vendors/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'zapp/js/dist/js/dataTables-data.js' %}"></script>
+
+
+    <!-- Easy pie chart JS -->
+  <script src="{% static 'zapp/js/vendors/easy-pie-chart/dist/jquery.easypiechart.min.js' %}"></script>
+  
+  <!-- Sparkline JavaScript -->
+  <script src="{% static 'zapp/js/vendors/jquery.sparkline/dist/jquery.sparkline.min.js' %}"></script>
+
+    <!-- FeatherIcons JavaScript -->
+    <script src="{% static 'zapp/js/dist/js/feather.min.js' %}"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="{% static 'zapp/js/dist/js/dropdown-bootstrap-extended.js' %}"></script>
+
+    <!-- Toggles JavaScript -->
+    <script src="{% static 'zapp/js/vendors/jquery-toggles/toggles.min.js' %}"></script>
+    <script src="{% static 'zapp/js/dist/js/toggle-data.js' %}"></script>
+
+      <!-- EChartJS JavaScript -->
+    <script src="{% static 'zapp/js/vendors/echarts/dist/echarts-en.min.js' %}"></script>
+
+
+  <!-- Peity JavaScript -->
+  <script src="{% static 'zapp/js/vendors/peity/jquery.peity.min.js' %}"></script>
+ 
+  <!-- Vector Maps JavaScript -->
+  <script src="{% static 'zapp/js/vendors/vectormap/jquery-jvectormap-2.0.3.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/vectormap/jquery-jvectormap-us-aea-en.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/vectormap/jquery-jvectormap-ru-mill.js' %}"></script>
+  <script src="{% static 'zapp/js/dist/js/vectormap-data.js' %}"></script>    
+    <!-- Init JavaScript -->
+    <script src="{% static 'zapp/js/dist/js/init.js' %}"></script>
+
+
+
+      <!-- Counter Animation JavaScript -->
+  <script src="{% static 'zapp/js/vendors/waypoints/lib/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/jquery.counterup/jquery.counterup.min.js' %}"></script>
+
+</body>
+
+</html>

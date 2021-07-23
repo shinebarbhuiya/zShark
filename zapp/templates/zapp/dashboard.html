@@ -1,0 +1,443 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>zShark Dashboard</title>
+    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+	
+	<!-- vector map CSS -->
+    <link href="{% static 'zapp/js/vendors/vectormap/jquery-jvectormap-2.0.3.css' %}" rel="stylesheet" type="text/css">
+	
+	<!-- Morris Charts CSS -->
+    <link href="{% static 'zapp/js/vendors/morris.js/morris.css' %}" rel="stylesheet" type="text/css" >
+	
+    <!-- Toggles CSS -->
+    <link href="{% static 'zapp/js/vendors/jquery-toggles/css/toggles.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'zapp/js/vendors/jquery-toggles/css/themes/toggles-light.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Data Table CSS -->
+    <link href="{% static 'zapp/js/vendors/datatables.net-dt/css/jquery.dataTables.min.css' %}" rel="stylesheet" type="text/css" >
+    <link href="{% static 'zapp/js/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css' %}" rel="stylesheet" type="text/css" >
+
+    <!-- Tablesaw table CSS -->
+    <link href="{% static 'zapp/js/vendors/tablesaw/dist/tablesaw.css' %}" rel="stylesheet" type="text/css" />
+	
+    <!-- Custom CSS -->
+    <link href="{% static 'zapp/js/dist/css/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+   <!-- Preloader -->
+   <div class="preloader-it">
+    <div class="loader-pendulums"></div>
+    </div>
+    <div class="hk-wrapper hk-alt-nav">
+        
+
+
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark navbar-demo fixed-top">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img class="brand-img d-inline-block align-top mr-10" src="{% static 'zapp/img/zShark.png' %}" alt="brand">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mt-1">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">DA/PA Checker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Google SERP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Future Features</a>
+                    </li>
+                </ul>
+                <form class="mr-10">
+                    <div class="input-group d-inline-flex">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-purple" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+                <ul class="navbar-nav align-items-center flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="font-22 zmdi zmdi-settings"></i></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="font-22 zmdi zmdi-notifications"></i></a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-flex align-items-center dropdown-toggle no-caret" href="#" id="userAuthdrp" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- <div class="avatar avatar-sm">
+                                <img src="{% static 'zapp/js/dist/img/avatar3.jpg' %}" alt="user" class="avatar-img rounded-circle">
+                            </div> -->
+                            <span class="font-12 text-capitalize ml-10">{{request.user}}<i class="zmdi zmdi-chevron-down pl-5"></i></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userAuthdrp">
+                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                            <!-- <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a> -->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+<div class="hk-pg-wrapper">
+    <div class="container-fluid">
+
+
+        
+
+        
+
+    
+            <div class="jumbotron jumbotron-fluid mt-4">
+                <div class="container">
+                <h1 class="display-4">Domain Authority / Page Authority Checker</h1>
+                <p class="lead">Get all the domain metric and details of any website. Here, you can find all the important SEO details of any website. </p>
+                </div>
+        </div>
+        
+
+        <h1 class="text-indigo">Domain Authority</h1>
+        
+        
+        
+        <section class="hk-sec-wrapper mt-4">
+            <h5 class="hk-sec-title">Authority Details</h5>
+            <p class="mb-25">Get all the details of this url <code>domain authority, page authority</code> and <code>many more</code>.</p>
+            
+            <div class="row">
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <form action="" method="GET">
+                            <input class="form-control form-control-lg mt-15" type="text" placeholder="Enter the URL" id="url" name="url">
+                            
+                            
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" value="Analyze" class="btn btn-success btn-lg mt-3 btn-block ">Analyze</button>
+                            <!-- <input type="submit" value="Analyze" class="btn btn-success btn-lg mt-3 btn-block "> -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+
+        <div class="hk-row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card card-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-5">
+                            <div>
+                                <span class="d-block font-15 text-dark font-weight-500 text-center">Domain Authority</span>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <span class="d-block display-4 text-dark mb-5 counter-anim text-center">{{da}}</span>
+                            <!-- <small class="d-block">12,458 Target Users</small> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card card-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-5">
+                            <div>
+                                <span class="d-block font-15 text-dark font-weight-500 text-center">Page Authority</span>
+                            </div>
+                            <!-- <div>
+                                <span class="text-primary font-14 font-weight-500">+15.5%</span>
+                            </div> -->
+                        </div>
+                        <div>
+                            <span class="d-block display-4 text-dark mb-5 text-center"><span class="counter-anim">{{pa}}</span></span>
+                            <!-- <small class="d-block">72,458 Targeted</small> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card card-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-5">
+                            <div>
+                                <span class="d-block font-15 text-dark font-weight-500">Spam Score</span>
+                            </div>
+                            <!-- <div>
+                                <span class="text-danger font-14 font-weight-500"></span>
+                            </div> -->
+                        </div>
+                        <div>
+                            <span class="d-block display-4 text-dark mb-5 counter-anim text-center">{{spam}}</span>
+                            <!-- <small class="d-block">42:32 Targeted</small> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <!-- <div class="card card-sm">
+                    <div class="card-body">
+                        <span class="d-block font-11 font-weight-500 text-dark text-uppercase mb-10">Backlinks</span>
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div>
+                                <span class="d-block">
+                                    <span class="display-5 font-weight-400 text-dark">{{inbound}}</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="text-danger font-12 font-weight-600">-12%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="card card-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-5">
+                            <div>
+                                <span class="d-block font-15 text-dark font-weight-500">Backlinks</span>
+                            </div>
+                            <!-- <div>
+                                <span class="text-danger font-14 font-weight-500">-75%</span>
+                            </div> -->
+                        </div>
+                        <div>
+                            <span class="d-block display-4 text-dark mb-5 counter-anim text-center">{{inbound}}</span>
+                            <!-- <small class="d-block">42:32 Targeted</small> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <section class="hk-sec-wrapper">
+                                    <h5 class="hk-sec-title">Top Pages</h5>
+                                    
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <div class="table-wrap">
+                                                <div class="tablesaw-bar tablesaw-mode-swipe tablesaw-all-cols-visible"><div class="tablesaw-sortable-switch tablesaw-bar-section"></div>
+                                                <div class="tablesaw-advance minimap" style="display: block;"></div></div><table class="table tablesaw table-bordered table-hover mb-0 tablesaw-sortable tablesaw-swipe" data-tablesaw-mode="swipe" data-tablesaw-sortable="" data-tablesaw-sortable-switch="" data-tablesaw-minimap="" data-tablesaw-mode-switch="" id="tablesaw-1563" style="">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="persist" class="tablesaw-sortable-head tablesaw-swipe-cellpersist "  data-tablesaw-sortable-numeric="false"><button class="tablesaw-sortable-btn">Title & URL<span class="tablesaw-sortable-arrow"></span></button></th>
+                                                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-sortable-default-col="" data-tablesaw-priority="3" class="tablesaw-sortable-head tablesaw-sortable-ascending" data-tablesaw-sortable-numeric=""><button class="tablesaw-sortable-btn">Page Authority<span class="tablesaw-sortable-arrow"></span></button></th>
+                                                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2" class="tablesaw-sortable-head" data-tablesaw-sortable-numeric=""><button class="tablesaw-sortable-btn">Backlinks<span class="tablesaw-sortable-arrow"></span></button></th>
+                                                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1" class="tablesaw-sortable-head" data-tablesaw-sortable-numeric=""><button class="tablesaw-sortable-btn"><abbr title="Rotten Tomato Rating">Internal Links</abbr><span class="tablesaw-sortable-arrow"></span></button></th>
+                                                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="4" class="tablesaw-sortable-head" data-tablesaw-sortable-numeric="false"><button class="tablesaw-sortable-btn">Crawl Date<span class="tablesaw-sortable-arrow"></span></button></th>
+                                                            
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                       
+                                                        {% for li in key_values %}
+
+                                                        <tr>
+                                                            {% if li.title  %}
+                                                            <td class="title tablesaw-swipe-cellpersist"><a href="https://{{li.page}}"><span style="
+                                                                display:inline-block;
+                                                                white-space: nowrap;
+                                                                overflow: hidden;
+                                                                text-overflow: ellipsis;
+                                                                max-width: 80ch;">
+                                                              
+                                                              {{li.title}}
+                                                            </span></a></td>
+                                                            {% else %}
+                                                            
+                                                            <td class="title tablesaw-swipe-cellpersist"><a href="https://{{li.page}}"><span style="
+                                                                display:inline-block;
+                                                                white-space: nowrap;
+                                                                overflow: hidden;
+                                                                text-overflow: ellipsis;
+                                                                max-width: 40ch;">
+                                                              {{li.page}}
+                                                            </span></a></td>
+                                                            {% endif %}
+                                                            <td>{{li.page_authority}}</td>
+                                                            <td>{{li.external_pages_to_page}}</td>
+                                                            <td class="">{{li.pages_to_page}}</td>
+                                                            <td class="">{{li.last_crawled}}</td>
+                                                        </tr>
+
+                                                        {% endfor %}
+                                                       
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+
+
+
+                        
+                                    <!-- /Row -->
+                    
+    </div>
+</div>                                <!-- /Container -->
+                    
+                                <!-- Footer -->
+                                <div class="hk-footer-wrap container-fluid">
+                                    <footer class="footer ">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12 text-center">
+                                                <p>Made With ❤️ By <a href="https://github.com/shinebarbhuiya/" class="text-dark" target="_blank">Shine Barbhuiya</a> © 2021</p>
+                                            </div>
+                                            <!-- <div class="col-md-6 col-sm-12">
+                                                <p class="d-inline-block">Follow me</p>
+                                                <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
+                                                <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
+                                                <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-google-plus"></i></span></a>
+                                            </div> -->
+                                        </div>
+                                    </footer>
+                                </div>
+                                <!-- /Footer -->
+                    
+                            </div>
+
+
+                  
+        </div> 
+        
+        
+    </div>    
+        
+</div>
+
+
+
+<!-- /HK Wrapper -->
+
+  <!-- jQuery -->
+  <script src="{% static 'zapp/js/vendors/jquery/dist/jquery.min.js' %}"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{% static 'zapp/js/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+  <!-- Slimscroll JavaScript -->
+  <script src="{% static 'zapp/js/dist/js/jquery.slimscroll.js' %}"></script>
+
+  <!-- Fancy Dropdown JS -->
+  <script src="{% static 'zapp/js/dist/js/dropdown-bootstrap-extended.js' %}"></script>
+
+  <!-- FeatherIcons JavaScript -->
+  <script src="{% static 'zapp/js/dist/js/feather.min.js' %}"></script>
+
+  <!-- Toggles JavaScript -->
+  <script src="{% static 'zapp/js/vendors/jquery-toggles/toggles.min.js' %}"></script>
+  <script src="{% static 'zapp/js/dist/js/toggle-data.js' %}"></script>
+  
+  <!-- Counter Animation JavaScript -->
+  <script src="{% static 'zapp/js/vendors/waypoints/lib/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/jquery.counterup/jquery.counterup.min.js' %}"></script>
+  
+  <!-- Easy pie chart JS -->
+  <script src="{% static 'zapp/js/vendors/easy-pie-chart/dist/jquery.easypiechart.min.js' %}"></script>
+  
+  <!-- Sparkline JavaScript -->
+  <script src="{% static 'zapp/js/vendors/jquery.sparkline/dist/jquery.sparkline.min.js' %}"></script>
+  
+  <!-- Morris Charts JavaScript -->
+  <script src="{% static 'zapp/js/vendors/raphael/raphael.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/morris.js/morris.min.js' %}"></script>
+ 
+  <!-- EChartJS JavaScript -->
+  <script src="{% static 'zapp/js/vendors/echarts/dist/echarts-en.min.js' %}"></script>
+  
+  <!-- Peity JavaScript -->
+  <script src="{% static 'zapp/js/vendors/peity/jquery.peity.min.js' %}"></script>
+ 
+  <!-- Vector Maps JavaScript -->
+  <script src="{% static 'zapp/js/vendors/vectormap/jquery-jvectormap-2.0.3.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/vectormap/jquery-jvectormap-us-aea-en.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/vectormap/jquery-jvectormap-ru-mill.js' %}"></script>
+  <script src="{% static 'zapp/js/dist/js/vectormap-data.js' %}"></script>
+  
+  <!-- Init JavaScript -->
+  <script src="{% static 'zapp/js/dist/js/init.js' %}"></script>
+  <script src="{% static 'zapp/js/dist/js/dashboard3-data.js' %}"></script>
+
+  <!-- Data Table JavaScript -->
+  <script src="{% static 'zapp/js/vendors/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/datatables.net-dt/js/dataTables.dataTables.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/datatables.net-buttons/js/buttons.flash.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/jszip/dist/jszip.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/pdfmake/build/pdfmake.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/pdfmake/build/vfs_fonts.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+
+
+   <!-- Tablesaw JavaScript -->
+   <script src="{% static 'zapp/js/vendors/tablesaw/dist/tablesaw.jquery.js' %}"></script>
+   <script src="{% static 'zapp/js/dist/js/tablesaw-data.js' %}"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+	
+</body>
+
+</html>

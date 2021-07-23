@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- 
+Template Name: Griffin - Responsive Bootstrap 4 Admin Dashboard Template
+Author: Hencework
+Support: support@hencework.com
+
+License: You must have a valid license purchased only from templatemonster to legally use the template for your project.
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>zShark Login</title>
+		<meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		
+		<!-- Toggles CSS -->
+		<link href="{% static 'zapp/js/vendors/jquery-toggles/css/toggles.css' %}" rel="stylesheet" type="text/css"> 
+    <link href="{% static 'zapp/js/vendors/jquery-toggles/css/themes/toggles-light.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'zapp/js/dist/css/style.css' %}" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<!-- Preloader -->
+		<div class="preloader-it">
+			<div class="loader-pendulums"></div>
+		</div>
+		<!-- /Preloader -->
+		
+		<!-- HK Wrapper -->
+		<div class="hk-wrapper">
+			
+			<!-- Main Content -->
+			<div class="hk-pg-wrapper hk-auth-wrapper">
+				<header class="d-flex justify-content-end align-items-center">
+					<div class="btn-group btn-group-sm">
+						<!-- <a href="#" class="btn btn-outline-secondary">Help</a> -->
+						<a href="{% url 'index' %}" class="btn btn-outline-secondary">Home</a>
+					</div>
+				</header>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xl-12 pa-0">
+							<div class="auth-form-wrap pt-xl-0 pt-70">
+								<div class="auth-form w-xl-30 w-lg-55 w-sm-75 w-100">
+									<a class="auth-brand text-center d-block mb-20" href="/">
+										<img class="brand-img" src="{% static 'zapp/img/zShark_dark.png' %}" alt="brand"/>
+									</a>
+									<form method="POST">
+										{% csrf_token %}
+										<h1 class="display-4 text-center mb-10">Welcome Broski! 😃</h1>
+										<p class="text-center mb-30">Sign in to your account and enjoy awesome perks.</p> 
+										<div class="form-group">
+											<input class="form-control" placeholder="Username" type="text" name="username">
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<input class="form-control" placeholder="Password" type="password" name="password">
+												<div class="input-group-append">
+													<span class="input-group-text"><span class="feather-icon"><i data-feather="eye-off"></i></span></span>
+												</div>
+											</div>
+										</div>
+										<div class="custom-control custom-checkbox mb-25">
+											<input class="custom-control-input" id="same-address" type="checkbox" checked>
+											<label class="custom-control-label font-14" for="same-address">Keep me logged in</label>
+										</div>
+										<!-- <input type="submit" class="btn btn-success btn-block" name="Submit"> -->
+										<button class="btn btn-success btn-block" type="submit">Login</button>
+										<!-- <p class="font-14 text-center mt-15">Having trouble logging in?</p>
+										<div class="option-sep">or</div>
+										<div class="form-row">
+											<div class="col-sm-6 mb-20"><button class="btn btn-indigo btn-block btn-wth-icon"> <span class="icon-label"><i class="fa fa-facebook"></i> </span><span class="btn-text">Login with facebook</span></button></div>
+											<div class="col-sm-6 mb-20"><button class="btn btn-sky btn-block btn-wth-icon"> <span class="icon-label"><i class="fa fa-twitter"></i> </span><span class="btn-text">Login with Twitter</span></button></div>
+										</div> -->
+                                        <br>
+										<p class="text-center">Do have an account yet? <a href="/signup">Sign Up</a></p>
+									</form>
+
+									{% for message in messages %}
+									<div class="alert alert-inv alert-inv-primary alert-wth-icon alert-dismissible fade show mt-4" role="alert">
+										<span class="alert-icon-wrap"><i class="zmdi zmdi-check-circle"></i></span> {{message}}
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true">×</span>
+										</button>
+									</div>
+									{% endfor %}
+								</div>
+
+								
+							</div>
+
+							
+                            
+                                
+                            </div>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Main Content -->
+		
+		</div>
+		<!-- /HK Wrapper -->
+		
+		<!-- JavaScript -->
+		
+		<!-- jQuery -->
+		<script src="{% static 'zapp/js/vendors/jquery/dist/jquery.min.js' %}"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{% static 'zapp/js/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+  <!-- Slimscroll JavaScript -->
+  <script src="{% static 'zapp/js/dist/js/jquery.slimscroll.js' %}"></script>
+
+  <!-- Fancy Dropdown JS -->
+  <script src="{% static 'zapp/js/dist/js/dropdown-bootstrap-extended.js' %}"></script>
+
+  <!-- FeatherIcons JavaScript -->
+  <script src="{% static 'zapp/js/dist/js/feather.min.js' %}"></script>
+
+  <!-- Tablesaw JavaScript -->
+  <script src="{% static 'zapp/js/vendors/tablesaw/dist/tablesaw.jquery.js' %}"></script>
+  <script src="{% static 'zapp/js/dist/js/tablesaw-data.js' %}"></script>
+
+  <!-- Toggles JavaScript -->
+  <script src="{% static 'zapp/js/vendors/jquery-toggles/toggles.min.js' %}"></script>
+  <script src="{% static 'zapp/js/dist/js/toggle-data.js' %}"></script>
+
+  <!-- Init JavaScript -->
+  <script src="{% static 'zapp/js/dist/js/init.js' %}"></script>
+	</body>
+</html>

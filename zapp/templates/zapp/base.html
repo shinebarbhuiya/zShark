@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Toggles CSS -->
+    <link href="{% static 'zapp/js/vendors/jquery-toggles/css/toggles.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'zapp/js/vendors/jquery-toggles/css/themes/toggles-light.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'zapp/js/dist/css/style.css' %}" rel="stylesheet" type="text/css">
+
+
+
+    <title>zShark - Best DA/PA Analyzer</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark navbar-demo">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img class="brand-img d-inline-block align-top mr-10" src="{% static 'zapp/js/dist/img/logo-dark.png' %}" alt="brand">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">DA/PA Checker</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Google SERP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Invoices</a>
+                </li>
+            </ul>
+            <form class="mr-10">
+                <div class="input-group d-inline-flex">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-purple" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+            <!-- <ul class="navbar-nav align-items-center flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="font-22 zmdi zmdi-settings"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="font-22 zmdi zmdi-notifications"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link d-flex align-items-center dropdown-toggle no-caret" href="#" id="userAuthdrp" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="avatar avatar-sm">
+                            <img src="{% static 'zapp/js/dist/img/avatar3.jpg' %}" alt="user" class="avatar-img rounded-circle">
+                        </div>
+                        <span class="font-12 text-capitalize ml-10">Shane<i class="zmdi zmdi-chevron-down pl-5"></i></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userAuthdrp">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul> -->
+        </div>
+    </nav>
+
+    {% block content %}
+
+    <!-- <div class="alert alert-inv alert-inv-success alert-wth-icon alert-dismissible fade show" role="alert">
+        <span class="alert-icon-wrap"><i class="zmdi zmdi-check-circle"></i></span> Welcome to zShark - We are so glad to have you here!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div> -->
+
+
+    {% endblock content %}
+
+
+
+    <div class="hk-footer-wrap container-fluid bg-light">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <p>Made With ❤️ By<a href="https://hencework.com/" class="text-dark" target="_blank">Shine Barbhuiya</a> © 2021</p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <p class="d-inline-block">Follow us</p>
+                    <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
+                    <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
+                    <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-google-plus"></i></span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+<!-- <script src="{% static 'zapp/js/bootstrap.js' %}"></script>    
+<script src="{% static 'zapp/js/popper.js' %}"></script>    
+<script src="{% static 'zapp/js/jquery.js' %}"></script>     -->
+
+  <!-- jQuery -->
+  <script src="{% static 'zapp/js/vendors/jquery/dist/jquery.min.js' %}"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{% static 'zapp/js/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+  <script src="{% static 'zapp/js/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+  <!-- Slimscroll JavaScript -->
+  <script src="{% static 'zapp/js/dist/js/jquery.slimscroll.js' %}"></script>
+
+  <!-- Fancy Dropdown JS -->
+  <script src="{% static 'zapp/js/dist/js/dropdown-bootstrap-extended.js' %}"></script>
+
+  <!-- FeatherIcons JavaScript -->
+  <script src="{% static 'zapp/js/dist/js/feather.min.js' %}"></script>
+
+  <!-- Tablesaw JavaScript -->
+  <script src="{% static 'zapp/js/vendors/tablesaw/dist/tablesaw.jquery.js' %}"></script>
+  <script src="{% static 'zapp/js/dist/js/tablesaw-data.js' %}"></script>
+
+  <!-- Toggles JavaScript -->
+  <script src="{% static 'zapp/js/vendors/jquery-toggles/toggles.min.js' %}"></script>
+  <script src="{% static 'zapp/js/dist/js/toggle-data.js' %}"></script>
+
+  <!-- Init JavaScript -->
+  <script src="{% static 'zapp/js/dist/js/init.js' %}"></script>
+
+
+</body>
+</html>
